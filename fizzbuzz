@@ -1,0 +1,47 @@
+using System;
+
+namespace firstProject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Would you like to play fizzbuzz with me?");
+            var yesNo = Console.ReadLine();
+            if (yesNo.ToLower() == "yes")
+            {
+                Console.WriteLine("What should i count up to?");
+                int amount = Convert.ToInt32(Console.ReadLine());
+                for (int i = 1; i < (1 + amount); i++)
+                {
+                    if (i % 3 == 0 && i % 5 == 0)
+                    {
+                        Console.WriteLine("Fizzbuzz");
+                    }
+                    else if (i % 3 == 0)
+                    {
+                        Console.WriteLine("Fizz");
+                    }
+                    else if (i % 5 == 0)
+                    {
+                        Console.WriteLine("Buzz");
+                    }
+                    else
+                    {
+                        Console.WriteLine(i);
+                    }
+                }
+            }
+            else if (yesNo.ToLower() == "no")
+            {
+                Console.WriteLine("What a shame, Goodbye!");
+                Environment.Exit(1);
+            }
+            else
+            {
+                Console.WriteLine("Please respond with yes or no");
+                Environment.Exit(0);
+            }
+        }
+    }
+}
